@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SUDO — 한성대 개발 소모임</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <!-- 첫 화면: 중앙 SUDO와 지원 버튼 -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-content">
+      <h1 class="hero-title">SUDO</h1>
+      <p class="hero-subtitle">한성대 AI응용학과 개발 소모임, 실전 프로젝트와 해커톤을 함께하는 공간.</p>
+      <div class="hero-actions">
+        <a class="hero-apply apply-btn" href="https://forms.gle/baLzPQS7HXpyEPAd7" target="_blank" rel="noopener noreferrer">지원하기</a>
+        <span class="hero-badge">프론트 · 백 · 디자인 · 기획 모집</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="hero-line"></div>
+    </div>
+  </section>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="club-title">SUDO</h1>
+      <a class="apply-btn" href="https://forms.gle/baLzPQS7HXpyEPAd7" target="_blank" rel="noopener noreferrer">지원하기</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <!-- 스크롤하면서 순차적으로 등장하는 정보 섹션 -->
+    <section class="features-section">
+      <article class="feature feature-left reveal">
+        <div class="feature-media">
+          <img src="./assets/image1.svg" alt="프로젝트 중심 소모임" />
+        </div>
+        <div class="feature-copy">
+          <span class="eyebrow">프로젝트 중심</span>
+          <h3>실제 학교 데이터를 활용한 서비스 개발</h3>
+          <p>공모전과 해커톤 도전, 실무형 포트폴리오 제작을 함께할 수 있는 소모임입니다.</p>
+        </div>
+      </article>
+
+      <article class="feature feature-right reveal">
+        <div class="feature-copy">
+          <span class="eyebrow">모집 대상</span>
+          <h3>한성대학교 학생 누구나</h3>
+          <p>전공과 경험은 상관없습니다. 열정과 책임감 있는 분을 기다립니다.</p>
+        </div>
+        <div class="feature-media">
+          <img src="./assets/image2.svg" alt="모집 대상" />
+        </div>
+      </article>
+
+      <article class="feature feature-left reveal">
+        <div class="feature-media">
+          <img src="./assets/image3.svg" alt="팀 구성" />
+        </div>
+        <div class="feature-copy">
+          <span class="eyebrow">협업형 팀 구성</span>
+          <h3>프론트 · 백엔드 · 디자인 · 기획</h3>
+          <p>각 파트가 함께 성장하는 프로젝트 운영으로 실력을 빠르게 넓힐 수 있습니다.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 메인 프로젝트 리스트: 요청에 따라 프로젝트만 포함 -->
+  <section class="projects-section">
+    <h2>진행/예정 프로젝트</h2>
+    <div class="projects">
+      <div class="project">
+        <h4>AI RAG 팀</h4>
+        <p>학교 홈페이지 연동 AI 챗봇 개발</p>
+        <p class="stack">예상 스택: Python · LangChain · Vector DB · LLM · React</p>
+      </div>
+
+      <div class="project">
+        <h4>추천 시스템 팀</h4>
+        <p>신입생 전공/트랙 추천 프로그램 개발</p>
+        <p class="stack">예상 스택: Python · Django/FastAPI · Web Frontend</p>
+      </div>
+
+      <div class="project">
+        <h4>AI 챗봇</h4>
+        <p>대화형 서비스 개발 · RAG 관련 기능 포함</p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- 연락 / 링크 섹션: 게시글에 있는 링크만 포함 -->
+  <footer class="site-footer">
+    <div class="links">
+      <a href="https://open.kakao.com/o/sUqjX89h" target="_blank" rel="noopener noreferrer">Kakao</a>
+      <a href="https://linktr.ee/SUDO_HSU" target="_blank" rel="noopener noreferrer">Linktree</a>
+    </div>
+    <p class="credit">SUDO — 한성대학교 AI응용학과 소모임</p>
+  </footer>
+
+  <script src="./src/app.js"></script>
+</body>
+</html>

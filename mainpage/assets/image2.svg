@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <rect width="1200" height="600" fill="#081018"/>
+  <g fill="#6ee7b7" opacity="0.12">
+    <rect x="80" y="80" width="420" height="360" rx="24"/>
+    <circle cx="920" cy="220" r="140"/>
+  </g>
+  <text x="60" y="520" fill="#9eeecd" font-size="36" font-family="Noto Sans JP, Arial">협업 · 스터디 · 해커톤</text>
+</svg>
