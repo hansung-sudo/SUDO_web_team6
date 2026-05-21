@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
-  <rect width="1200" height="600" fill="#08111a"/>
-  <g fill="#3ee0c4" opacity="0.14">
-    <rect x="160" y="120" width="880" height="220" rx="18"/>
-  </g>
-  <text x="60" y="520" fill="#c9fff0" font-size="36" font-family="Noto Sans JP, Arial">프론트·백·디자인 모집</text>
-</svg>

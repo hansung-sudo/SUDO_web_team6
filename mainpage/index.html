@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SUDO — 한성대 개발 소모임</title>
+  <title>SUDO - 한성대학교 AI응용학과 소모임</title>
+  
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
-  <!-- 첫 화면: 중앙 SUDO와 지원 버튼 -->
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="club-title">SUDO</div>
+      <button type="button" class="apply-btn">지원하기</button>
+    </div>
+  </header>
+
   <section class="hero-section" id="heroSection">
     <div class="hero-content">
       <h1 class="hero-title">SUDO</h1>
-      <p class="hero-subtitle">한성대 AI응용학과 개발 소모임, 실전 프로젝트와 해커톤을 함께하는 공간.</p>
+      <p class="hero-subtitle">스터디부터 공모전, 해커톤까지<br>함께 성장하는 프로젝트 중심 소모임</p>
       <div class="hero-actions">
-        <a class="hero-apply apply-btn" href="https://forms.gle/baLzPQS7HXpyEPAd7" target="_blank" rel="noopener noreferrer">지원하기</a>
-        <span class="hero-badge">프론트 · 백 · 디자인 · 기획 모집</span>
+        <button type="button" class="hero-apply apply-btn">지금 지원하기</button>
+        <span class="hero-badge">기획 · 개발 · 디자인</span>
       </div>
     </div>
     <div class="hero-scroll">
@@ -23,81 +32,114 @@
     </div>
   </section>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <h1 class="club-title">SUDO</h1>
-      <a class="apply-btn" href="https://forms.gle/baLzPQS7HXpyEPAd7" target="_blank" rel="noopener noreferrer">지원하기</a>
-    </div>
-  </header>
-
   <main class="page-content">
-    <!-- 스크롤하면서 순차적으로 등장하는 정보 섹션 -->
-    <section class="features-section">
-      <article class="feature feature-left reveal">
-        <div class="feature-media">
-          <img src="./assets/image1.svg" alt="프로젝트 중심 소모임" />
-        </div>
-        <div class="feature-copy">
-          <span class="eyebrow">프로젝트 중심</span>
-          <h3>실제 학교 데이터를 활용한 서비스 개발</h3>
-          <p>공모전과 해커톤 도전, 실무형 포트폴리오 제작을 함께할 수 있는 소모임입니다.</p>
-        </div>
-      </article>
-
-      <article class="feature feature-right reveal">
-        <div class="feature-copy">
-          <span class="eyebrow">모집 대상</span>
-          <h3>한성대학교 학생 누구나</h3>
-          <p>전공과 경험은 상관없습니다. 열정과 책임감 있는 분을 기다립니다.</p>
-        </div>
-        <div class="feature-media">
-          <img src="./assets/image2.svg" alt="모집 대상" />
-        </div>
-      </article>
-
-      <article class="feature feature-left reveal">
-        <div class="feature-media">
-          <img src="./assets/image3.svg" alt="팀 구성" />
-        </div>
-        <div class="feature-copy">
-          <span class="eyebrow">협업형 팀 구성</span>
-          <h3>프론트 · 백엔드 · 디자인 · 기획</h3>
-          <p>각 파트가 함께 성장하는 프로젝트 운영으로 실력을 빠르게 넓힐 수 있습니다.</p>
-        </div>
-      </article>
+    
+    <section class="section section-about reveal">
+      <span class="eyebrow">무엇을 하나요?</span>
+      <h2>실제 데이터 기반 서비스 제작</h2>
+      <p>SUDO는 학교 데이터를 직접 활용해 실사용자를 위한 서비스를 기획하고 만듭니다.<br>SW중심대학 사업 연계를 통해 공식 데이터와 권한을 확보하며, 상용화를 목표로 개발부터 배포까지의 사이클을 경험합니다.</p>
+      
+      <div class="list-grid">
+        <div class="list-item"><strong>공모전 & 해커톤</strong>관심 분야 팀 빌딩 및 대회 출전</div>
+        <div class="list-item"><strong>스터디</strong>5인 1조, 주 1회 대면/비대면 기술 학습</div>
+        <div class="list-item"><strong>대외활동</strong>IT 컨퍼런스, 세미나 정보 공유 및 동반 참여</div>
+        <div class="list-item"><strong>현직자 멘토링</strong>실무 조언 및 IT 업계 네트워킹 기회</div>
+      </div>
     </section>
 
-    <!-- 메인 프로젝트 리스트: 요청에 따라 프로젝트만 포함 -->
-  <section class="projects-section">
-    <h2>진행/예정 프로젝트</h2>
-    <div class="projects">
-      <div class="project">
-        <h4>AI RAG 팀</h4>
-        <p>학교 홈페이지 연동 AI 챗봇 개발</p>
-        <p class="stack">예상 스택: Python · LangChain · Vector DB · LLM · React</p>
+    <section class="section section-team reveal">
+      <div class="section-header">
+        <span class="eyebrow">운영진을 소개합니다</span>
+        <h2>함께 성장하는 SUDO 리더들</h2>
       </div>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-icon">PM</div>
+          <div>
+            <h3>전체 총괄 (PM/기획)</h3>
+            <p>소모임 운영 · 대외협력 · 기획 멘토링</p>
+            <ul>
+              <li>SW/AI 해외연수 프로그램 데이터분석 해커톤 팀장 (3등)</li>
+              <li>한성대학교 기업연계 AI 캡스톤 디자인 팀장 (최우수상)</li>
+              <li>학부연구생 2년 (VAE 데이터 증강 프로젝트)</li>
+            </ul>
+            <a href="https://www.linkedin.com/in/yuni-cho-yun-seo-cho-0a87142b4" target="_blank" rel="noopener noreferrer">LinkedIn 프로필 보기</a>
+          </div>
+        </article>
+        
+        <article class="team-card">
+          <div class="team-icon">CTO</div>
+          <div>
+            <h3>기술 총괄 (CTO/개발 리드)</h3>
+            <p>아키텍처 설계 · 코드 리뷰 · 개발 멘토링</p>
+            <ul>
+              <li>교육 플랫폼 개발사 개발팀장 (2020.03 ~ 현재)</li>
+              <li>국립암센터 AI 연구실 연구원 참여 (2024.07 ~ 2025.02)</li>
+              <li>상일여고, 강동구의회 등 코딩 교육 출강 다수</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <div class="project">
-        <h4>추천 시스템 팀</h4>
-        <p>신입생 전공/트랙 추천 프로그램 개발</p>
-        <p class="stack">예상 스택: Python · Django/FastAPI · Web Frontend</p>
+    <section class="section section-join reveal">
+      <div class="section-header">
+        <span class="eyebrow">지금 바로 합류하세요</span>
+        <h2>전공 무관, 경험 무관</h2>
+        <p style="color: var(--text-muted); margin-top: 10px;">열정과 책임감만 있다면 누구나 성장할 수 있는 환경을 제공합니다.</p>
       </div>
+      <div class="join-grid">
+        <div class="join-card">
+          <h4>기획</h4>
+          <p>서비스 기획 · 사용자 조사 · 프로젝트 관리</p>
+        </div>
+        <div class="join-card">
+          <h4>개발</h4>
+          <p>프론트엔드 · 백엔드 · AI/ML</p>
+        </div>
+        <div class="join-card">
+          <h4>디자인</h4>
+          <p>UI/UX · 제품 디자인 · 브랜드 디자인</p>
+        </div>
+        <div class="join-card">
+          <h4>지원/운영</h4>
+          <p>기술 문서화 · 커뮤니케이션 · 일정 관리</p>
+        </div>
+      </div>
+    </section>
 
-      <div class="project">
-        <h4>AI 챗봇</h4>
-        <p>대화형 서비스 개발 · RAG 관련 기능 포함</p>
+    <section class="section section-projects reveal">
+      <div class="section-header">
+        <span class="eyebrow">우리의 여정을 살펴보세요</span>
+        <h2>SUDO 프로젝트</h2>
       </div>
-    </div>
-  </section>
+      <div class="projects">
+        <article class="project-card">
+          <h3>AI RAG 챗봇</h3>
+          <p>학교 홈페이지 연동 AI 챗봇 개발</p>
+          <p class="stack">Python · LangChain · Vector DB · React</p>
+        </article>
+        <article class="project-card">
+          <h3>추천 시스템</h3>
+          <p>신입생 전공 및 트랙 추천 프로그램</p>
+          <p class="stack">Python · Django/FastAPI · React</p>
+        </article>
+        <article class="project-card">
+          <h3>미니 챗봇 프로젝트</h3>
+          <p>신입 부원을 위한 LLM API 활용 기초 챗봇</p>
+          <p class="stack">Python · OpenAI API · Prompt Engineering</p>
+        </article>
+      </div>
+    </section>
+
   </main>
 
-  <!-- 연락 / 링크 섹션: 게시글에 있는 링크만 포함 -->
   <footer class="site-footer">
     <div class="links">
-      <a href="https://open.kakao.com/o/sUqjX89h" target="_blank" rel="noopener noreferrer">Kakao</a>
+      <a href="https://open.kakao.com/o/sUqjX89h" target="_blank" rel="noopener noreferrer">KakaoTalk 문의</a>
       <a href="https://linktr.ee/SUDO_HSU" target="_blank" rel="noopener noreferrer">Linktree</a>
     </div>
-    <p class="credit">SUDO — 한성대학교 AI응용학과 소모임</p>
+    <p class="credit">© 2026 SUDO — 한성대학교 AI응용학과 소모임</p>
   </footer>
 
   <script src="./src/app.js"></script>
