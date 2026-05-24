@@ -2,7 +2,7 @@ name: CI/CD — Build, push to OCIR and deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
 
 env:
   IMAGE: ${{ secrets.OCIR_REGISTRY }}/${{ secrets.OCIR_NAMESPACE }}/sudo_web:${{ github.sha }}
