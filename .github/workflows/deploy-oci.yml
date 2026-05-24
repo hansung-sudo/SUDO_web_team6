@@ -28,17 +28,7 @@ jobs:
           push: true
           tags: ${{ env.IMAGE }}
 
-      - name: Copy docker-compose to remote host
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          source: "docker-compose.yml"
-          target: ${{ secrets.DEPLOY_PATH }}
-
-      - name: Deploy on remote host (pull & restart)
+      - name: Deploy on remote host (create compose, pull & restart)
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -47,7 +37,23 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             set -e
+            # login to OCIR
             printf '%s' "${{ secrets.OCIR_PASSWORD }}" | docker login ${{ secrets.OCIR_REGISTRY }} -u "${{ secrets.OCIR_USERNAME }}" --password-stdin
+
+            mkdir -p ${{ secrets.DEPLOY_PATH }}
+            cat > ${{ secrets.DEPLOY_PATH }}/docker-compose.yml <<'EOF'
+version: '3.8'
+services:
+  web:
+    image: $IMAGE
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+EOF
+
+            # replace $IMAGE placeholder with the actual image tag
+            sed -i "s|\$IMAGE|${{ env.IMAGE }}|g" ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
+
             cd ${{ secrets.DEPLOY_PATH }}
             docker compose pull
             docker compose up -d --remove-orphans
