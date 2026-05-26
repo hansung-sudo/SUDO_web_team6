@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0.36
+    container_name: mysql
+    ports:
+      - "13306:3306"
+    command:
+      - --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: web
+      MYSQL_ROOT_PASSWORD: "qwe123!@#"
+      MYSQL_USER: user
+      MYSQL_PASSWORD: "qwe123!@#"
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
