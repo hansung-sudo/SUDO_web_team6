@@ -1,0 +1,26 @@
+SET NAMES utf8mb4;
+
+CREATE TABLE applicant (
+    idx BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '지원자 IDX'
+    , student_number VARCHAR(20) NOT NULL UNIQUE COMMENT '학번'
+    , name VARCHAR(30) NOT NULL COMMENT '이름'
+    , phone VARCHAR(30) NOT NULL COMMENT '전화번호'
+    , email VARCHAR(100) NOT NULL UNIQUE COMMENT '이메일'
+    , motivation TEXT NOT NULL COMMENT '지원 동기'
+    , introduction TEXT NOT NULL COMMENT '자기소개'
+    , created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성일시'
+    , updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '수정일시'
+) COMMENT = '동아리 지원자';
+
+CREATE TABLE project (
+    idx BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '프로젝트 IDX'
+    , name VARCHAR(100) NOT NULL COMMENT '프로젝트명'
+    , summary TEXT NOT NULL COMMENT '프로젝트 소개'
+    , github_url VARCHAR(500) COMMENT 'GitHub URL'
+    , demo_url VARCHAR(500) COMMENT '배포 URL'
+    , thumbnail_image_url VARCHAR(500) COMMENT '대표 썸네일 이미지 URL'
+    , started_at DATE COMMENT '프로젝트 시작일'
+    , ended_at DATE COMMENT '프로젝트 종료일'
+    , created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성일시'
+    , updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '수정일시'
+) COMMENT = '동아리 프로젝트';
