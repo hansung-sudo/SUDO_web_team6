@@ -22,11 +22,21 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
+.smart-wrap {
+  word-break: keep-all;       
+  overflow-wrap: break-word;  
+}
+
+.smart-wrap span {
+  display: inline-block;      
+  white-space: pre-wrap;      
+}
+
 /* === Header === */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  padding: 20px 40px;
+  padding: 20px 40px; 
   display: flex;
   justify-content: center;
   background: rgba(10, 10, 14, 0.8);
@@ -128,7 +138,7 @@ ul { list-style: none; }
 
 /* === Layout === */
 .page-content { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-.section { margin-bottom: 120px; }
+.section { margin-bottom: 180px; }
 .section-header { text-align: center; margin-bottom: 60px; }
 .eyebrow {
   color: var(--secondary);
@@ -194,7 +204,9 @@ h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
 .join-card {
   background: var(--bg-card); border: 1px solid var(--border-color);
   padding: 40px 24px; border-radius: 16px; text-align: center;
+  transition: all 0.3s ease;
 }
+.join-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(99, 102, 241, 0.08); }
 .join-card h4 { font-size: 1.4rem; margin-bottom: 12px; color: #fff; }
 .join-card p { color: var(--text-muted); font-size: 0.95rem; }
 
@@ -204,6 +216,11 @@ h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
   background: var(--bg-card); border: 1px solid var(--border-color);
   padding: 30px; border-radius: 16px;
   transition: all 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 .project-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
 .project-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
@@ -224,9 +241,18 @@ h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
 .site-footer a:hover { color: #fff; }
 .site-footer .credit { color: #555; font-size: 0.9rem; }
 
-/* === Animations (Scroll Reveal) === */
-.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+/* === Animations (Scroll Reveal) 수정 === */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1); 
+  will-change: opacity, transform; 
+}
+
+.reveal.active { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
 
 /* 반응형 */
 @media (max-width: 768px) {
