@@ -11,6 +11,10 @@ const { pingDatabase } = require("./db/pool");
 
 const app = express();
 
+// When running behind a reverse proxy (nginx) enable trust proxy
+// so express and middleware like express-rate-limit can read X-Forwarded-* headers correctly.
+app.set('trust proxy', 1);
+
 app.use(helmet());
 app.use(cors({ origin: config.corsOrigin === "*" ? true : config.corsOrigin }));
 app.use(express.json({ limit: "64kb" }));
