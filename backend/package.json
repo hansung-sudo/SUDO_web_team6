@@ -1,0 +1,23 @@
+{
+  "name": "sudo-web-backend",
+  "version": "1.0.0",
+  "description": "Express backend API for SUDO web applicant submissions.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/config/env.js && node --check src/db/pool.js && node --check src/routes/applicants.js && node --check src/controllers/applicantController.js && node --check src/services/applicantService.js && node --check src/validators/applicantValidator.js && node --check src/middleware/errorHandler.js && node --check src/middleware/notFound.js && node --check src/utils/normalizeApplicantInput.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "joi": "^17.13.3",
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
