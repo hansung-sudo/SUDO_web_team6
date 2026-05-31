@@ -1,8 +1,8 @@
 FROM nginx:alpine
 
-# Copy static site into nginx html dir
 COPY ./mainpage /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
-CMD ["/bin/sh", "-c", "nginx -g 'daemon off;'" ]
+CMD ["nginx", "-g", "daemon off;"]
