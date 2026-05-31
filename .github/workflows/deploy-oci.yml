@@ -89,8 +89,9 @@ jobs:
             printf '%s\n' "    restart: unless-stopped" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "  web:" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "    image: ${{ env.WEB_IMAGE }}" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
+            # bind web host port to 8080 to avoid colliding with services already using port 80
             printf '%s\n' "    ports:" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
-            printf '%s\n' "      - \"80:80\"" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
+            printf '%s\n' "      - \"8080:80\"" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "    depends_on:" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "      - backend" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "    restart: unless-stopped" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
