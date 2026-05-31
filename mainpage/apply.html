@@ -252,9 +252,11 @@
   </div>
 
   <script>
-    document.getElementById('applyForm').addEventListener('submit', function(e) {
+    document.getElementById('applyForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      
+
+      const submitButton = this.querySelector('.submit-btn');
+
       const formData = {
         name: document.getElementById('name').value,
         studentId: document.getElementById('studentId').value,
@@ -266,9 +268,33 @@
         projects: document.getElementById('projects').value,
         portfolio: document.getElementById('portfolio').value
       };
-      
-      console.log('제출된 데이터:', formData);
-      alert('지원서가 성공적으로 제출되었습니다!');
+
+      try {
+        submitButton.disabled = true;
+        submitButton.textContent = '제출 중...';
+
+        const response = await fetch('/api/applicants', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result?.message || '지원서 제출에 실패했습니다.');
+        }
+
+        alert('지원서가 성공적으로 제출되었습니다!');
+        this.reset();
+      } catch (error) {
+        alert(error.message || '지원서 제출에 실패했습니다.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = '제출하기';
+      }
     });
   </script>
 </body>
