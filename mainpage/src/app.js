@@ -1,5 +1,12 @@
 ﻿document.addEventListener("DOMContentLoaded", function() {
+  const applyButtons = document.querySelectorAll(".apply-btn");
   const reveals = document.querySelectorAll(".reveal");
+
+  applyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      window.location.href = "./apply.html";
+    });
+  });
   
   const revealOnScroll = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
