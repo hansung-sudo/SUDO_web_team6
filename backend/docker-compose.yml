@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: .
+    container_name: sudo-backend
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: "${NODE_ENV:-production}"
+      PORT: "${PORT:-3000}"
+      DB_HOST: "${DB_HOST:-mysql}"
+      DB_PORT: "${DB_PORT:-3306}"
+      DB_USER: "${DB_USER:-user}"
+      DB_PASSWORD: "${DB_PASSWORD:-qwe123!@#}"
+      DB_NAME: "${DB_NAME:-web}"
+      DB_CONNECTION_LIMIT: "${DB_CONNECTION_LIMIT:-10}"
+    networks:
+      - sudo_db
+    restart: unless-stopped
+
+networks:
+  sudo_db:
+    external: true
+    name: db_default
