@@ -64,6 +64,8 @@ jobs:
             printf '%s\n' "      MYSQL_ROOT_PASSWORD: \"qwe123!@#\"" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "      MYSQL_USER: user" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "      MYSQL_PASSWORD: \"qwe123!@#\"" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
+            printf '%s\n' "    ports:" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
+            printf '%s\n' "      - \"13306:3306\"" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "    volumes:" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "      - mysql_data:/var/lib/mysql" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
             printf '%s\n' "    healthcheck:" >> ${{ secrets.DEPLOY_PATH }}/docker-compose.yml
