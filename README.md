@@ -40,7 +40,15 @@
 4. Express 서버가 입력값을 검증하고 MySQL에 저장합니다.
 5. MySQL에 저장된 결과가 API 응답으로 돌아옵니다.
 
-## 로컬 실행
+## 접속 주소
+
+http://sudoweb6.wjdxogus04.cloud/
+
+## DB 조회
+
+![alt text](DB.png)
+
+## 로컬 실행 방법
 
 전체 스택은 루트의 `docker-compose.yml`로 실행합니다.
 
